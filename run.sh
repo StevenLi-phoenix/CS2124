@@ -15,7 +15,7 @@ done
 shift $((OPTIND -1))
 
 for file in "$@"; do
-    echo "get $file"
+    echo "File $file"
 done
 
 if [ "$#" -lt 1 ]; then
