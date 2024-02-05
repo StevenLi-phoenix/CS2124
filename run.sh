@@ -24,7 +24,7 @@ if [ "$#" -lt 1 ]; then
 fi
 
 if git status &> /dev/null; then
-    echo "got git repo, commiting..."
+    echo "Git commiting..."
     git add . &> /dev/null
     git commit -m "auto commit" &> /dev/null
 fi
