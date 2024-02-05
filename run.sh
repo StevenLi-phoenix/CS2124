@@ -25,8 +25,8 @@ fi
 
 if git status &> /dev/null; then
     echo "got git repo, commiting..."
-    git add .
-    git commit -m "auto commit"
+    git add . &> /dev/null
+    git commit -m "auto commit" &> /dev/null
 fi
 
 filename="$1"
