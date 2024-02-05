@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp",
+        "string": "cpp",
+        "iostream": "cpp",
+        "__locale": "cpp",
+        "locale": "cpp",
+        "typeinfo": "cpp",
+        "ios": "cpp"
+    },
+    "cmake.configureOnOpen": false
+}
