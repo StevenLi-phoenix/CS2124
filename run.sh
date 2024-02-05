@@ -15,6 +15,10 @@ done
 shift $((OPTIND -1))
 
 for file in "$@"; do
+    if [ ! -f "$file" ]; then
+        echo "Error: File '$file' not found."
+        exit 1
+    fi
     echo "File $file"
 done
 
