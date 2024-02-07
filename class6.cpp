@@ -39,7 +39,7 @@ void pointerTest();
 
 // main function
 int main() {
-    pointerTest();
+    pointerSwap();
 }
 
 // function implementations
@@ -64,6 +64,26 @@ void pointerTest(){
     *p = 10;
     p = &second;
     *p = 20;
+
+    cout << "first: " << first << endl;
+    cout << "second: " << second << endl;
+}
+
+void pointerSwap(){
+    int first = 1, second = 20;
+    int *p1, *p2;
+
+    p1 = &first;
+    p2 = &second;  
+
+    *p1 = 10; 
+    *p2 = *p2;
+
+    cout << "first: " << first << endl;
+    cout << "second: " << second << endl;
+
+    p1 = p2;
+    *p1 = 30;
 
     cout << "first: " << first << endl;
     cout << "second: " << second << endl;
