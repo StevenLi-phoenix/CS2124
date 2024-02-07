@@ -68,7 +68,11 @@ fi
 
 echo "Running...\n"
 
+# run the complied program while copying the input to .temp/input
+# copy the output to .temp/output
 ./.temp/a
+# ./.temp/a < input.txt > .temp/output
+
 
 if [ $? -ne 0 ]; then
     echo "\nExecution failed."
@@ -83,11 +87,11 @@ if [ ! "$current_md5" = "$last_md5" ] || [ $force -eq 1 ]; then
     for file in "$@"; do
         rsync "./$file" "digit:~/cpp/"
     done
-    ssh digit "echo complie: > ~/cpp/result.log && g++ ~/cpp/$filename -o ~/cpp/temp.out >> ~/cpp/result.log 2>&1 "
-    ssh digit "echo run: >> ~/cpp/result.log  && cd ~/cpp && ~/cpp/temp.out >> ~/cpp/result.log 2>&1 "
+    echo "Compiling and Runninig on server"
+    ssh digit "echo complie: > ~/cpp/result.log && g++ ~/cpp/$filename -o ~/cpp/temp.out >> ~/cpp/result.log 2>&1 && echo >> ~/cpp/result.log  && echo run: >> ~/cpp/result.log && cd ~/cpp && ~/cpp/temp.out >> ~/cpp/result.log 2>&1"
     echo "Retrive result"
     rsync digit:~/cpp/result.log ./result.log
-    ssh digit "rm -f ~/cpp/temp.out ~/cpp/result.log"
+    ssh digit "rm ~/cpp/temp.out ~/cpp/result.log"
     echo "Remote Program Out:"
     echo
     cat ./result.log
