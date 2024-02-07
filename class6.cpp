@@ -57,7 +57,7 @@ void crossSpouse(){
 }
 
 void pointerTest(){
-    int x = 'a';
+    int x = 0x1000;
     int *p;
     p = &x;
     cout << p << endl;
