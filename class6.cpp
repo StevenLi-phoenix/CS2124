@@ -60,6 +60,6 @@ void pointerTest(){
     int x = 0x1000;
     int *p;
     p = &x;
-    cout << p << endl;
+    cout << &p << endl;
 }
 
