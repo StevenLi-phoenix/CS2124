@@ -60,6 +60,6 @@ void pointerTest(){
     char x = 'a';
     char *p;
     p = &x;
-    cout << p << endl;
+    cout << sizeof(p) << endl;
 }
 
