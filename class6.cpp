@@ -34,7 +34,7 @@ class Person{
 };
 
 // function prototypes
-void crossReference();
+void crossSpouse();
 void pointerTest();
 
 // main function
@@ -48,7 +48,7 @@ ostream& operator<<(ostream& os, const Person& p){
     return os;
 }
 
-void crossReference(){
+void crossSpouse(){
     Person p1("John");
     Person p2("Lisa");
     p1.marries(p2);
@@ -60,6 +60,6 @@ void pointerTest(){
     char x = 'a';
     char *p;
     p = &x;
-    cout << sizeof(p) << endl;
+    cout << p << endl;
 }
 
