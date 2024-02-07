@@ -37,10 +37,11 @@ class Person{
 void crossSpouse();
 void pointerTest();
 void pointerSwap();
+void addressformat();
 
 // main function
 int main() {
-    pointerSwap();
+    addressformat();
 }
 
 // function implementations
@@ -93,3 +94,8 @@ void pointerSwap(){
     cout << "second: " << second << endl;
 }
 
+void addressformat(){
+    int x = 10;
+    int *p = &x;
+    cout << "x: " << x << endl;
+}
