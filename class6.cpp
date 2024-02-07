@@ -54,7 +54,6 @@ void crossReference(){
     p1.marries(p2);
     cout << p1 << endl;
     cout << p2 << endl;
-    return 0;
 }
 
 void pointerTest(){
