@@ -57,9 +57,15 @@ void crossSpouse(){
 }
 
 void pointerTest(){
-    char x = 'a';
-    char *p;
-    p = &x;
-    cout << *p << endl;
+    int first, second;
+    int *p;
+
+    p = &first;
+    *p = 10;
+    p = &second;
+    *p = 20;
+
+    cout << "first: " << first << endl;
+    cout << "second: " << second << endl;
 }
 
