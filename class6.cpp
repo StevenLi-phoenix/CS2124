@@ -36,6 +36,7 @@ class Person{
 // function prototypes
 void crossSpouse();
 void pointerTest();
+void pointerSwap();
 
 // main function
 int main() {
