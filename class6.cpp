@@ -19,17 +19,18 @@ using namespace std;
 // class definitions
 class Person{
     public:
-        Person(const string& name): name(name){}
+        Person(const string& name): name(name), spouse(nullptr){}
 
         friend ostream& operator<<(ostream& os, const Person& p);
 
         bool marries(Person& other){
             // spouse = other; // function (declared implicitly), cannot be referred -- it is a deleted function
+            spouse = &other;
             return true;
         }
     private:
         string name;
-        // Person& spouse;
+        Person *spouse;
 
 };
 
@@ -41,12 +42,17 @@ void addressformat();
 
 // main function
 int main() {
-    addressformat();
+    crossSpouse();
 }
 
 // function implementations
 ostream& operator<<(ostream& os, const Person& p){
     os << p.name;
+    if(p.spouse != nullptr){
+        os << " is married to " << p.spouse->name;
+    } else {
+        os << " is not married";
+    }
     return os;
 }
 
