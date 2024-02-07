@@ -33,8 +33,22 @@ class Person{
 
 };
 
+// function prototypes
+void crossReference();
+void pointerTest();
+
 // main function
 int main() {
+    pointerTest();
+}
+
+// function implementations
+ostream& operator<<(ostream& os, const Person& p){
+    os << p.name;
+    return os;
+}
+
+void crossReference(){
     Person p1("John");
     Person p2("Lisa");
     p1.marries(p2);
@@ -43,8 +57,10 @@ int main() {
     return 0;
 }
 
-// function definitions
-ostream& operator<<(ostream& os, const Person& p){
-    os << p.name;
-    return os;
+void pointerTest(){
+    char x = 'a';
+    char *p;
+    p = &x;
+    cout << p << endl;
 }
+
