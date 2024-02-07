@@ -97,5 +97,5 @@ void pointerSwap(){
 void addressformat(){
     int x = 10;
     int *p = &x;
-    cout << "x: " << x << endl;
+    cout << "x address: " << p << endl;
 }
