@@ -9,7 +9,7 @@ Usage: run directly
 Licence: CC BY-NC-SA 4.0
 */
 #include <iostream>
-// #include <vector>
+#include <vector>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -57,8 +57,6 @@ void crossReference(){
 }
 
 void pointerTest(){
-    vector<int> v;
-    cout << sizeof(v) << endl;
     char x = 'a';
     char *p;
     p = &x;
