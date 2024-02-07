@@ -80,6 +80,9 @@ void pointerSwap(){
     *p1 = 10; 
     *p2 = *p2;
 
+    *p1 = 11;
+    *p2 = 12;
+
     cout << "first: " << first << endl;
     cout << "second: " << second << endl;
 
