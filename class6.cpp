@@ -25,8 +25,20 @@ class Person{
 
         bool marries(Person& other){
             // spouse = other; // function (declared implicitly), cannot be referred -- it is a deleted function
+            if(spouse != nullptr){
+                return false;
+            }
             spouse = &other;
             other.spouse = this;
+            return true;
+        }
+
+        bool divorces(Person& other){
+            if (spouse != &other){
+                return false;
+            }
+            spouse = nullptr;
+            other.spouse = nullptr;
             return true;
         }
     private:
