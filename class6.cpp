@@ -50,6 +50,10 @@ ostream& operator<<(ostream& os, const Person& p){
     return os;
 }
 
+/**
+ * Simulates a marriage between two Person objects.
+ * Prints the names of the two Persons.
+ */
 void crossSpouse(){
     Person p1("John");
     Person p2("Lisa");
@@ -58,6 +62,10 @@ void crossSpouse(){
     cout << p2 << endl;
 }
 
+/**
+ * Demonstrates the usage of pointers.
+ * Prints the values of two integers.
+ */
 void pointerTest(){
     int first, second;
     int *p;
@@ -71,6 +79,10 @@ void pointerTest(){
     cout << "second: " << second << endl;
 }
 
+/**
+ * Demonstrates swapping values using pointers.
+ * Prints the values of two integers before and after swapping.
+ */
 void pointerSwap(){
     int first = 1, second = 20;
     int *p1, *p2;
@@ -94,6 +106,9 @@ void pointerSwap(){
     cout << "second: " << second << endl;
 }
 
+/**
+ * Prints the memory address of an integer variable.
+ */
 void addressformat(){
     int x = 10;
     int *p = &x;
