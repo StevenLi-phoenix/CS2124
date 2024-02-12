@@ -22,6 +22,7 @@ class Person{
         return os;
     };
 public:
+    Person(const string& name): name(name){}
     string getName() const {return name;}
 private:
     string name;
@@ -38,7 +39,7 @@ int main(){
     for (const auto& p : group){
         cout << p.getName() << endl;
     }
-    
+
 
 }
 // function definitions
