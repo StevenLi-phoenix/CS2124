@@ -20,7 +20,7 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        os << p.name << " is " << p.spouse ? "married to " + p.spouse->name : "not married.";
+        os << p.name << " is " << (p.spouse ? "married to " + p.spouse->name : "not married.");
         return os;
     };
 public:
