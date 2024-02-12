@@ -20,20 +20,19 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        if (!p.spouse) {
-            os << p.name << " is not married";
-        } else {
-            os << p.name << " is married to " << (*p.spouse).name;
-        }
+        os << p.name << " is " << p.spouse ? "married to " + p.spouse->name : "not married.";
         return os;
     };
 public:
     Person(const string& name): name(name), spouse(nullptr){}
-    bool marries(Person& other){spouse = &other; other.spouse = this; return true;}
-    bool divorces(Person& other){spouse = nullptr; other.spouse = nullptr; return true;};
+    bool marries(Person& other){
+        if (this->spouse || other.spouse) return false; // this pointer is for readability
+        spouse = &other; other.spouse = this; return true;}
+    bool divorces(Person& other){
+        spouse = nullptr; other.spouse = nullptr; return true;};
 private:
     string name;
-    Person *spouse;
+    Person* spouse;
 };
 // function prototypes
 
@@ -49,5 +48,9 @@ int main() {
     tom.divorces(sue);
     cout << tom << endl;
     cout << sue << endl;
+
+    Person mary = Person("Mary");
+    mary.marries(tom);
+    cout << mary << endl;
 }
 // function definitions
