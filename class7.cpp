@@ -44,25 +44,31 @@ int main() {
     Person sue = Person("Sue");
     cout << tom << endl;
     cout << sue << endl;
+    cout << "============" << endl;
 
     cout << "Tom marries Sue:" << endl; // allowed, not married
     tom.marries(sue);
     cout << tom << endl;
     cout << sue << endl;
+    cout << "============" << endl;
 
     cout << "Tom divorces Sue:" << endl; // allowed, they are married
     tom.divorces(sue);
     cout << tom << endl;
     cout << sue << endl;
+    cout << "============" << endl;
 
     cout << "Tom marries himself:" << endl; // not allowed, same person
     tom.marries(tom);
     cout << tom << endl;
+    cout << "============" << endl;
 
     cout << "Tom marries Sue:" << endl; // not allowed, already married
     Person mary = Person("Mary");
     tom.divorces(sue);
     mary.marries(tom);
     cout << mary << endl;
+    cout << "============" << endl;
+
 }
 // function definitions
