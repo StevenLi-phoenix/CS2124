@@ -40,7 +40,7 @@ int main(){
     group.emplace_back("Sue");
     group.emplace_back("Bob");
 
-    for (const auto& p : group){
+    for (const Person& p : group){
         cout << p.getName() << endl;
     }
 
