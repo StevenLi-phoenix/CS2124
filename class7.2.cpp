@@ -18,7 +18,7 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        os << p.name << (p.age > 0 ? " is " + to_string(p.age) + " years old." : "");
+        os << p.name << " is " << p.age << " years old.";
         return os;
     };
 public:
