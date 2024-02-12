@@ -71,6 +71,8 @@ int main() {
     Person mary = Person("Mary");
     tom.marries(sue);
     mary.marries(sue);
+    cout << tom << endl;
+    cout << sue << endl;
     cout << mary << endl;
     cout << "============" << endl;
 
