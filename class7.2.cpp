@@ -36,22 +36,22 @@ private:
 // function prototypes
 // main function
 int main(){
-    vector<Person> group1;
-    group1.push_back(Person("Tom"));
-    group1.push_back(Person("Sue", 30));
-    group1.push_back(Person("Bob", 25));
-    vector<Person> group2;
-    group2.push_back(Person("Alice", 40));
-    group2.push_back(Person("Eve", 45));
-    vector<Person> group3;
-    group3.push_back(Person("Jane", 50));
-    group3.push_back(Person("Joe", 55));
-    group3.push_back(Person("Jill"));
-    group3.push_back(Person("Jack", 65));
-    group3.push_back(Person("Jen", 70));
+    vector<Person*> group1;
+    group1.push_back(&Person("Tom"));
+    group1.push_back(&Person("Sue", 30));
+    group1.push_back(&Person("Bob", 25));
+    vector<Person*> group2;
+    group2.push_back(&Person("Alice", 40));
+    group2.push_back(&Person("Eve", 45));
+    vector<Person*> group3;
+    group3.push_back(&Person("Jane", 50));
+    group3.push_back(&Person("Joe", 55));
+    group3.push_back(&Person("Jill"));
+    group3.push_back(&Person("Jack", 65));
+    group3.push_back(&Person("Jen", 70));
     
-    cout << "Group 1:" << endl; for (const Person& p : group1)cout << p << endl;
-    cout << "Group 2:" << endl; for (const Person& p : group2)cout << p << endl;
-    cout << "Group 3:" << endl; for (const Person& p : group3)cout << p << endl;
+    cout << "Group 1:" << endl; for (const Person* p : group1)cout << *p << endl;
+    cout << "Group 2:" << endl; for (const Person* p : group2)cout << *p << endl;
+    cout << "Group 3:" << endl; for (const Person* p : group3)cout << *p << endl;
 }
 // function definitions
