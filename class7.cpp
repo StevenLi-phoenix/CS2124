@@ -50,6 +50,7 @@ int main() {
     cout << tom << endl;
     cout << sue << endl;
     tom.marries(tom);
+    cout << tom << endl;
 
     Person mary = Person("Mary");
     mary.marries(tom);
