@@ -26,8 +26,8 @@ class Person{
 public:
     Person(const string& name): name(name), spouse(nullptr){}
     bool marries(Person& other){
+        if (this == &other) return false; // assert not the same person
         if (this->spouse || other.spouse) return false; // this pointer is for readability
-        if (this == &other) return false;
         spouse = &other; other.spouse = this; return true;}
     bool divorces(Person& other){
         spouse = nullptr; other.spouse = nullptr; return true;};
@@ -39,19 +39,27 @@ private:
 
 // main function
 int main() {
+    cout << "Tome and Sue:" << endl; // initial state
     Person tom = Person("Tom");
     Person sue = Person("Sue");
     cout << tom << endl;
     cout << sue << endl;
+
+    cout << "Tom marries Sue:" << endl; // allowed, not married
     tom.marries(sue);
     cout << tom << endl;
     cout << sue << endl;
+
+    cout << "Tom divorces Sue:" << endl; // allowed, they are married
     tom.divorces(sue);
     cout << tom << endl;
     cout << sue << endl;
+
+    cout << "Tom marries himself:" << endl; // not allowed, same person
     tom.marries(tom);
     cout << tom << endl;
 
+    cout << "Tom marries Sue:" << endl; // not allowed, already married
     Person mary = Person("Mary");
     tom.divorces(sue);
     mary.marries(tom);
