@@ -18,7 +18,7 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        os << p.name;
+        os << p.name << (p.age > 0 ? " is " + to_string(p.age) + " years old." : "");
         return os;
     };
 public:
@@ -37,18 +37,18 @@ private:
 // main function
 int main(){
     vector<Person> group1;
-    group1.emplace_back("Tom");
-    group1.emplace_back("Sue");
-    group1.emplace_back("Bob");
+    group1.push_back(Person("Tom", 35));
+    group1.push_back(Person("Sue", 30));
+    group1.push_back(Person("Bob", 25));
     vector<Person> group2;
-    group2.emplace_back("Alice");
-    group2.emplace_back("Eve");
+    group2.push_back(Person("Alice", 40));
+    group2.push_back(Person("Eve", 45));
     vector<Person> group3;
-    group3.emplace_back("John");
-    group3.emplace_back("Jane");
-    group3.emplace_back("Joe");
-    group3.emplace_back("Jill");
-    group3.emplace_back("Jack");
+    group3.push_back(Person("Jane", 50));
+    group3.push_back(Person("Joe", 55));
+    group3.push_back(Person("Jill", 60));
+    group3.push_back(Person("Jack", 65));
+    group3.push_back(Person("Jen", 70));
     
     cout << "Group 1:" << endl; for (const Person& p : group1)cout << p.getName() << endl;
     cout << "Group 2:" << endl; for (const Person& p : group2)cout << p.getName() << endl;
