@@ -22,10 +22,14 @@ class Person{
         return os;
     };
 public:
-    Person(const string& name): name(name){}
+    Person(const string& name): name(name), age(0){}
+    Person(const string& name, int age): name(name), age(age){}
     string getName() const {return name;}
+    int getAge() const {return age;}
+    void setAge(int age) {this->age = age;}
 private:
     string name;
+    int age;
 };
 
 // function prototypes
