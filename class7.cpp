@@ -25,6 +25,7 @@ class Person{
         } else {
             os << p.name << " is married to " << p.spouse->name;
         }
+        return os;
     };
 public:
     Person(const string& name): name(name), spouse(nullptr){}
