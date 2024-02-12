@@ -21,7 +21,7 @@ using namespace std;
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
         if (!p.spouse) {
-            os << p.name << endl;
+            os << p.name << " is not married";
         } else {
             os << p.name << " is married to " << p.spouse->name;
         }
