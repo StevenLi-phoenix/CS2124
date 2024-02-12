@@ -30,6 +30,10 @@ public:
         if (this->spouse || other.spouse) return false; // this pointer is for readability
         spouse = &other; other.spouse = this; return true;}
     bool divorces(Person& other){
+        if (this == &other) return false; // assert not the same person
+        if (this->spouse == nullptr || other.spouse == nullptr) return false; // this pointer is for readability
+        if (this->spouse != &other) return false; // this pointer is for readability
+        if (other.spouse != this) return false; // this pointer is for readability
         spouse = nullptr; other.spouse = nullptr; return true;};
 private:
     string name;
