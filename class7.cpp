@@ -19,7 +19,13 @@ using namespace std;
 
 // class definitions
 class Person{
-    friend ostream& operator<<(ostream& os, const Person& p);
+    friend ostream& operator<<(ostream& os, const Person& p){
+        if (!p.spouse) {
+            os << p.name << endl;
+        } else {
+            os << p.name << " is married to " << p.spouse->name;
+        }
+    };
 public:
     Person(const string& name): name(name), spouse(nullptr){}
     bool marries(Person& other){spouse = &other; other.spouse = this; return true;}
@@ -44,10 +50,3 @@ int main() {
     cout << sue << endl;
 }
 // function definitions
-ostream& operator<<(ostream& os, const Person& p){
-    os << p.name;
-    if(p.spouse != nullptr){
-        os << " is married to " << p.spouse->name;
-    }
-    return os;
-}
