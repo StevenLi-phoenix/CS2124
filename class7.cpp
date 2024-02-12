@@ -53,6 +53,7 @@ int main() {
     cout << tom << endl;
 
     Person mary = Person("Mary");
+    tom.divorces(sue);
     mary.marries(tom);
     cout << mary << endl;
 }
