@@ -37,7 +37,7 @@ private:
 // main function
 int main(){
     vector<Person> group1;
-    group1.push_back(Person("Tom", 35));
+    group1.push_back(Person("Tom"));
     group1.push_back(Person("Sue", 30));
     group1.push_back(Person("Bob", 25));
     vector<Person> group2;
@@ -46,7 +46,7 @@ int main(){
     vector<Person> group3;
     group3.push_back(Person("Jane", 50));
     group3.push_back(Person("Joe", 55));
-    group3.push_back(Person("Jill", 60));
+    group3.push_back(Person("Jill"));
     group3.push_back(Person("Jack", 65));
     group3.push_back(Person("Jen", 70));
     
