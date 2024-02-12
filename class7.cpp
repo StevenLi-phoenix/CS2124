@@ -27,7 +27,7 @@ public:
     Person(const string& name): name(name), spouse(nullptr){}
     bool marries(Person& other){
         if (this->spouse || other.spouse) return false; // this pointer is for readability
-        // if (this == &other) return false;
+        if (this == &other) return false;
         spouse = &other; other.spouse = this; return true;}
     bool divorces(Person& other){
         spouse = nullptr; other.spouse = nullptr; return true;};
