@@ -23,7 +23,7 @@ class Person{
         if (!p.spouse) {
             os << p.name << " is not married";
         } else {
-            os << p.name << " is married to " << p.spouse.name;
+            os << p.name << " is married to " << (&(p.spouse)).name;
         }
         return os;
     };
