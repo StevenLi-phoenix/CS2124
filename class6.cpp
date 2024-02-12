@@ -24,7 +24,8 @@ class Person{
         friend ostream& operator<<(ostream& os, const Person& p);
 
         bool marries(Person& other){
-            // spouse = other; // function (declared implicitly), cannot be referred -- it is a deleted function
+            // spouse = other; // function (declared implicitly), cannot be
+// referred -- it is a deleted function
             if(spouse != nullptr){
                 return false;
             }
@@ -138,7 +139,10 @@ void addressformat(){
 void pointerToConstAndConstPointer(){
     int x = 10;
     const int a = 20;
-    const int *p1 = &x; // p1 is a pointer to a const int, the value it points to cannot be changed
-    int *const p2 = &x; // p2 is a const pointer to an int, could only be assigned once, the value it points to can be changed
-    const int *const p3 = &x; // p3 can only be initialized once and value it points to cannot be changed
+    const int *p1 = &x; // p1 is a pointer to a const int, the value it points
+// to cannot be changed
+    int *const p2 = &x; // p2 is a const pointer to an int, could only be
+// assigned once, the value it points to can be changed
+    const int *const p3 = &x; // p3 can only be initialized once and value it
+// points to cannot be changed
 }
