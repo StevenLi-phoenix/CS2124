@@ -18,7 +18,7 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        os << p.name << " is " << p.age << " years old.";
+        os << p.name << (p.age > 0 ? " is " + to_string(p.age) + " years old." : "");
         return os;
     };
 public:
@@ -50,8 +50,8 @@ int main(){
     group3.push_back(Person("Jack", 65));
     group3.push_back(Person("Jen", 70));
     
-    cout << "Group 1:" << endl; for (const Person& p : group1)cout << p.getName() << endl;
-    cout << "Group 2:" << endl; for (const Person& p : group2)cout << p.getName() << endl;
-    cout << "Group 3:" << endl; for (const Person& p : group3)cout << p.getName() << endl;
+    cout << "Group 1:" << endl; for (const Person& p : group1)cout << p << endl;
+    cout << "Group 2:" << endl; for (const Person& p : group2)cout << p << endl;
+    cout << "Group 3:" << endl; for (const Person& p : group3)cout << p << endl;
 }
 // function definitions
