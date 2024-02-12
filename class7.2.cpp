@@ -26,6 +26,7 @@ public:
     Person(const string& name, int age): name(name), age(age){}
     string getName() const {return name;}
     int getAge() const {return age;}
+    void setName(const string& name) {this->name = name;}
     void setAge(int age) {this->age = age;}
 private:
     string name;
@@ -35,15 +36,22 @@ private:
 // function prototypes
 // main function
 int main(){
-    vector<Person> group;
-    group.emplace_back("Tom");
-    group.emplace_back("Sue");
-    group.emplace_back("Bob");
+    vector<Person> group1;
+    group1.emplace_back("Tom");
+    group1.emplace_back("Sue");
+    group1.emplace_back("Bob");
+    vector<Person> group2;
+    group2.emplace_back("Alice");
+    group2.emplace_back("Eve");
+    vector<Person> group3;
+    group3.emplace_back("John");
+    group3.emplace_back("Jane");
+    group3.emplace_back("Joe");
+    group3.emplace_back("Jill");
+    group3.emplace_back("Jack");
 
-    for (const Person& p : group){
-        cout << p.getName() << endl;
-    }
-
-
+    for (const Person& p : group1)cout << p.getName() << endl;
+    for (const Person& p : group2)cout << p.getName() << endl;
+    for (const Person& p : group3)cout << p.getName() << endl;
 }
 // function definitions
