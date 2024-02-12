@@ -27,6 +27,7 @@ public:
     Person(const string& name): name(name), spouse(nullptr){}
     bool marries(Person& other){
         if (this->spouse || other.spouse) return false; // this pointer is for readability
+        // if (this == &other) return false;
         spouse = &other; other.spouse = this; return true;}
     bool divorces(Person& other){
         spouse = nullptr; other.spouse = nullptr; return true;};
@@ -48,6 +49,7 @@ int main() {
     tom.divorces(sue);
     cout << tom << endl;
     cout << sue << endl;
+    tom.marries(tom);
 
     Person mary = Person("Mary");
     mary.marries(tom);
