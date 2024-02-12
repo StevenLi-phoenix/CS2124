@@ -32,7 +32,16 @@ private:
 
 // main function
 int main() {
-
+    Person tom = Person("Tom");
+    Person sue = Person("Sue");
+    cout << tom << endl;
+    cout << sue << endl;
+    tom.marries(sue);
+    cout << tom << endl;
+    cout << sue << endl;
+    tom.divorces(sue);
+    cout << tom << endl;
+    cout << sue << endl;
 }
 // function definitions
 ostream& operator<<(ostream& os, const Person& p){
