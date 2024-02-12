@@ -49,9 +49,9 @@ int main(){
     group3.emplace_back("Joe");
     group3.emplace_back("Jill");
     group3.emplace_back("Jack");
-
-    for (const Person& p : group1)cout << p.getName() << endl;
-    for (const Person& p : group2)cout << p.getName() << endl;
-    for (const Person& p : group3)cout << p.getName() << endl;
+    
+    cout << "Group 1:" << endl; for (const Person& p : group1)cout << p.getName() << endl;
+    cout << "Group 2:" << endl; for (const Person& p : group2)cout << p.getName() << endl;
+    cout << "Group 3:" << endl; for (const Person& p : group3)cout << p.getName() << endl;
 }
 // function definitions
