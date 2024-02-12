@@ -62,15 +62,15 @@ int main() {
     cout << sue << endl;
     cout << "============" << endl;
 
-    cout << "Tom marries himself:" << endl; // not allowed, same person
+    cout << "Tom tried marries himself:" << endl; // not allowed, same person
     tom.marries(tom);
     cout << tom << endl;
     cout << "============" << endl;
 
-    cout << "Tom marries Sue:" << endl; // not allowed, already married
+    cout << "Mary tries marries Sue, while tom is married to sue:" << endl; // not allowed, Sue is married
     Person mary = Person("Mary");
-    tom.divorces(sue);
-    mary.marries(tom);
+    tom.marries(sue);
+    mary.marries(sue);
     cout << mary << endl;
     cout << "============" << endl;
 
