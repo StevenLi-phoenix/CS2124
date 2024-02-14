@@ -24,9 +24,13 @@ class Thing{
         return os;
     }
     public:
-        Thing(int x = 0): x(x){}
+        Thing(int x = 0): x(new int(x)){} // new keyword is used to allocate memory on the heap
+        ~Thing(){
+            cout << "Thing destroyed" << endl;
+            delete x;
+        }
     private:
-        int x;
+        int* x;
 };
 // function prototypes
 void printThing(){
