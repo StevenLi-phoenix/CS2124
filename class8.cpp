@@ -23,8 +23,7 @@ int main(){
     vector<Person> people;
     people.push_back(Person("Mike", 40));
     people.push_back(Person("Vicky"));
-    people.push_back(Person(40));
-
+    // people.push_back(Person(40)); // not work
     for (const Person& p: people){
         cout << p.name << " " << p.age << endl;
     }
