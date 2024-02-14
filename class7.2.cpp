@@ -18,7 +18,8 @@ using namespace std;
 // class definitions
 class Person{
     friend ostream& operator<<(ostream& os, const Person& p){
-        os << p.name << (p.age > 0 ? " is " + to_string(p.age) + " years old." : "");
+        os << p.name << (p.age > 0 ? " is " + to_string(p.age) + " years old."
+ : "");
         return os;
     };
 public:
@@ -36,10 +37,13 @@ private:
 // function prototypes
 // main function
 int main(){
+    vector<Person> people;
     vector<Person*> group1;
-    group1.push_back(&Person("Tom"));
-    group1.push_back(&Person("Sue", 30));
-    group1.push_back(&Person("Bob", 25));
+    people.push_back(Person("Tom"));
+    group1.push_back(&people[people.size()-1]); // ??/
+    people.push_back(Person("Sue", 30));
+    group1.push_back(&people[1]);
+    people.push_back(Person("Bob", 25));
     vector<Person*> group2;
     group2.push_back(&Person("Alice", 40));
     group2.push_back(&Person("Eve", 45));
@@ -50,8 +54,11 @@ int main(){
     group3.push_back(&Person("Jack", 65));
     group3.push_back(&Person("Jen", 70));
     
-    cout << "Group 1:" << endl; for (const Person* p : group1)cout << *p << endl;
-    cout << "Group 2:" << endl; for (const Person* p : group2)cout << *p << endl;
-    cout << "Group 3:" << endl; for (const Person* p : group3)cout << *p << endl;
+    cout << "Group 1:" << endl; for (const Person* p : group1)cout << *p <<
+ endl;
+    cout << "Group 2:" << endl; for (const Person* p : group2)cout << *p <<
+ endl;
+    cout << "Group 3:" << endl; for (const Person* p : group3)cout << *p <<
+ endl;
 }
 // function definitions
