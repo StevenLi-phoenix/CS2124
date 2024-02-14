@@ -9,7 +9,7 @@ using namespace std;
 // class definitions
 
 // function prototypes
-int getNum(int num1, int num2 = 0);
+int getNum(int num1, int num2);
 
 // main function
 int main(){
@@ -19,6 +19,6 @@ int main(){
 }
 
 // function definitions
-int getNum(int num1, int num2){
+int getNum(int num1, int num2 = 0){
     return num1 + num2;
 }
