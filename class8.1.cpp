@@ -42,6 +42,7 @@ int main(){
     Group group1("Group1");
     group1.addPerson("Mike", 40);
     group1.addPerson("Vicky", 30);
+    groups.push_back(group1);
 
 
     for (const Group& g: groups){
