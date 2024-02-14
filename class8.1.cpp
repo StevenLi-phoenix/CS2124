@@ -46,15 +46,25 @@ int main(){
     group1.addPerson("Mike", 40);
     group1.addPerson("Vicky", 30);
     groups.push_back(group1);
-
-
     for (const Group& g: groups){
         cout << g << endl;
     }
+
+    int x = 1;
+    cout << &x << endl;
+    x = copy(x);
+    cout << &x << endl;
+
     return 0;
 }
 
 // function definitions
 int getNum(int num1, int num2){
     return num1 + num2;
+}
+
+template <typename T>
+T copy(T a){
+    T b = a;
+    return b;
 }
