@@ -53,7 +53,7 @@ int main(){
     int x = 1;
     cout << &x << endl;
 
-    return 137;
+    return 0;
 }
 
 // function definitions
