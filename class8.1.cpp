@@ -28,7 +28,7 @@ int main(){
 
     ifstream file("people.txt");
     string name;
-    int age;
+    int age; 
     while (file >> name >> age){
         group1.push_back(new Person(name, age));
     }
