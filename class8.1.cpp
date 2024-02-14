@@ -32,6 +32,7 @@ class Group{
     private:
         string name;
         vector<Person> people;
+};
 // function prototypes
 
 
