@@ -52,8 +52,6 @@ int main(){
 
     int x = 1;
     cout << &x << endl;
-    int y = copy(x);
-    cout << &y << endl;
 
     return 0;
 }
@@ -61,10 +59,4 @@ int main(){
 // function definitions
 int getNum(int num1, int num2){
     return num1 + num2;
-}
-
-template <typename T>
-T copy(T a){
-    T b = a;
-    return b;
 }
