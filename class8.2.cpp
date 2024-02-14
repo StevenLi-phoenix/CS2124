@@ -40,6 +40,9 @@ void printThing(){
 // main function
 int main() {
     printThing();
+    Thing* t = new Thing(10);
+    cout << *t << endl;
+    delete t;
     return 0;
 }
 
