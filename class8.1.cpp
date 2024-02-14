@@ -52,8 +52,8 @@ int main(){
 
     int x = 1;
     cout << &x << endl;
-    x = copy(x);
-    cout << &x << endl;
+    int y = copy(x);
+    cout << &y << endl;
 
     return 0;
 }
