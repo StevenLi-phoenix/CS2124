@@ -11,22 +11,8 @@ class Person{
     public:
         string name;
         int age;
-        Person(string name, int age){
-            this->name = name;
-            this->age = age;
-        }
-        Person(string name, int age = -1){
-            this->name = name;
-            this->age = age;
-        }
-        Person(int age, string name = "Unknown"){
-            this->name = name;
-            this->age = age;
-        }
-        Person(){
-            this->name = "Unknown";
-            this->age = -1;
-        }
+        Person(string name = "unnamed", int age = -1): name(name), age(age){}
+
 };
 
 // function prototypes
@@ -36,9 +22,7 @@ class Person{
 int main(){
     vector<Person> people;
     people.push_back(Person("Mike", 40));
-    people.push_back(Person(30));
     people.push_back(Person("Vicky"));
-    people.push_back(Person());
 
     for (const Person& p: people){
         cout << p.name << " " << p.age << endl;
