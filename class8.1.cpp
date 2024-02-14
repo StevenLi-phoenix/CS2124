@@ -21,7 +21,10 @@ class Person{
 
 class Group{
     friend ostream& operator<<(ostream& os, const Group& g){
-        os << g.name << " " << g.people.size();
+        os << g.name << ": " << endl;
+        for (const Person& p: g.people){
+            os << "\t" << p << endl;
+        }
         return os;
     }
     public:
