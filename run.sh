@@ -53,7 +53,7 @@ fi
 if [ "$current_md5" != "$last_md5" ] || [ $force -eq 1 ]; then
     rm -f .temp/md5
     echo "Compiling..."
-    g++ -std=c++11 "$filename" -o "./.temp/a"
+    g++ -std=c++11 -Wall "$filename" -o "./.temp/a"
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1

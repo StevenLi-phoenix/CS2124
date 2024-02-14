@@ -18,37 +18,21 @@ class Person{
         string name;
         int age;
 };
-
-class Group{
-    friend ostream& operator<<(ostream& os, const Group& g){
-        os << g.name << ": " << endl;
-        for (const Person& p: g.people){
-            os << "\t" << p << endl;
-        }
-        return os;
-    }
-    public:
-        Group(string name = "unnamed"): name(name){}
-        void addPerson(string name, int age){
-            people.push_back(Person(name, age));
-        }
-    private:
-        string name;
-        vector<Person> people;
-};
 // function prototypes
 
 
 // main function
 int main(){
-    vector<Group> groups;
-    Group group1("Group1");
-    group1.addPerson("Mike", 40);
-    group1.addPerson("Vicky", 30);
-    groups.push_back(group1);
-    for (const Group& g: groups){
-        cout << g << endl;
+    vector<Person*> group1;
+    vector<Person*> group2;
+
+    ifstream file("people.txt");
+    string name;
+    int age;
+    while (file >> name >> age){
+        group1.push_back(new Person(name, age));
     }
+    
 
     int x = 1;
     cout << &x << endl;
