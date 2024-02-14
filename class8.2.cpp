@@ -20,7 +20,7 @@ using namespace std;
 // class definitions
 class Thing{
     friend ostream& operator<<(ostream& os, const Thing& t){
-        os << "Thing:" << *t.x << "@" << t.x ;
+        os << "Thing:" << *t.x << " @ " << t.x;
         return os;
     }
     public:
