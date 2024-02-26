@@ -23,6 +23,11 @@ using namespace std;
 
 // main function
 int main() {
+    int myarray[5];
+    myarray[0] = 1;
+    cout << myarray[0] << endl;
+    cout << myarray[1] << endl;
+    cout << myarray << endl;
     
     return 0;
 }
