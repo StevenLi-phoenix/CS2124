@@ -53,7 +53,7 @@ class Vector{
             return data[sizeValue];
         }
         int operator[](size_t index) {
-            return data[index];
+            return *(data+index);
         }
     private:
         bool resize(size_t newsize) {
