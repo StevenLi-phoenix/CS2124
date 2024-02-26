@@ -37,13 +37,15 @@ class Vector{
         ~Vector() { delete[] data; }
         size_t size() const { return sizeValue; }
         bool push_back(int val) {
-            if (capacity == 0) {
+            if (capacity == 0) { // special case for empty vector
                 if (!resize(1)) {
                     cerr << "push_back: cannot resize" << endl;
                     return false;
-                } // possible OOM
+                } // this should not be failed
                 data = new int[1];
-                sizeValue++;
+                sizeValue = 1;
+                capacity = 1;
+                data[0] = val;
                 return true;
             }
             if (sizeValue == capacity) {
