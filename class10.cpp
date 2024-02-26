@@ -19,7 +19,7 @@ using namespace std;
 
 // class definitions
 class Vector{
-    friend ostream& operator<<(ostream& os, const Vector& v);
+    // friend ostream& operator<<(ostream& os, const Vector& v);
     public:
         Vector() : capacity(0), size(0), data(nullptr) {}
         Vector(size_t s, int val = 0) : capacity(s), size(s) {
