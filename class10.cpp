@@ -21,7 +21,7 @@ using namespace std;
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v);
     public:
-        Vector() : size(0), capacity(0), data(nullptr) {}
+        Vector() :  capacity(0), size(0), data(nullptr) {}
         Vector(int s, int val = 0) : size(s), capacity(s) {
             data = new int[s];
             for (size_t ii = 0; ii < s; ii++) {
