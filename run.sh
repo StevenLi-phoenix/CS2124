@@ -53,7 +53,12 @@ fi
 if [ "$current_md5" != "$last_md5" ] || [ $force -eq 1 ]; then
     rm -f .temp/md5
     echo "Compiling..."
-    g++ -std=c++11 "$filename" -o "./.temp/a" -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused
+    if [ $force -eq 1 ]; then
+        g++ -std=c++11 "$filename" -o "./.temp/a" -fpermissive
+    fi
+    if [ $force -eq 0 ]; then
+        g++ -std=c++11 "$filename" -o "./.temp/a" -pedantic -Wall -Wextra -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Wformat=2 -Winit-self -Wmissing-declarations -Wmissing-include-dirs -Wold-style-cast -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-conversion -Wsign-promo -Wstrict-overflow=5 -Wswitch-default -Wundef -Werror -Wno-unused
+    fi
     if [ $? -ne 0 ]; then
         echo "Compilation failed."
         exit 1
