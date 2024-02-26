@@ -18,7 +18,53 @@ using namespace std;
 // global variables
 
 // class definitions
+class Vector{
+    friend ostream& operator<<(ostream& os, const Vector& v);
+    public:
+        Vector(int s, int val = 0) : size(s), capacity(s) {
+            data = new int[s];
+            for (size_t ii = 0; ii < s; ii++) {
+                data[ii] = val;
+            }
+        }
+        ~Vector() { delete[] data; }
+        bool push_back(int val) {
+            if (size == capacity) {
+                if (!resize(2 * capacity)) return false; // possible OOM
+            }
+            data[size] = val;
+            size++;
+            return true;
+        }
+        void clear() {
+            size = 0;
+        }
+        int pop_back() {
+            if (size == 0) return;
+            size--;
+            return data[size];
+        }
+    private:
+        bool resize(size_t newsize) {
+            if (newsize > capacity) {
+                int* temp = new int[newsize];
+                for (size_t ii = 0; ii < size; ii++) {
+                    temp[ii] = data[ii];
+                }
+                delete[] data;
+                data = temp;
+                capacity = newsize;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        size_t capacity;
+        size_t size;
+        int* data;
 
+
+};
 // function prototypes
 
 // main function
