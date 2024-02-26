@@ -66,7 +66,7 @@ class Vector{
             }
             return data[sizeValue];
         }
-        int operator[](int index) {
+        int operator[](size_t index) {
             // return *(data+index);
             if (index >= sizeValue) return -1;
             if (index >= 0) return data[index];
@@ -121,7 +121,7 @@ int main() {
     cout << v.push_back(10) << endl;
     cout << v.push_back(20) << endl;
     cout << v[0] << endl;
-    cout << v[-1] << endl;
+    // cout << v[-1] << endl;
     cout << v << endl;
     return 0;
 }
