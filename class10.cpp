@@ -20,42 +20,46 @@ using namespace std;
 // class definitions
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v){
-        os << "capacity: " << v.capacity << " size: " << v.size << " data: ";
-        for (size_t ii = 0; ii < v.size; ii++) {
+        os << "capacity: " << v.capacity << " size: " << v.sizeValue << " data: ";
+        for (size_t ii = 0; ii < v.sizeValue; ii++) {
             os << v.data[ii] << " ";
         }
         return os;
     };
     public:
-        Vector() : capacity(0), size(0), data(nullptr) {}
-        Vector(size_t s, int val = 0) : capacity(s), size(s) {
+        Vector() : capacity(0), sizeValue(0), data(nullptr) {}
+        Vector(size_t s, int val = 0) : capacity(s), sizeValue(s) {
             data = new int[s];
             for (size_t ii = 0; ii < s; ii++) {
                 data[ii] = val;
             }
         }
         ~Vector() { delete[] data; }
+        size_t size() const { return sizeValue; }
         bool push_back(int val) {
-            if (size == capacity) {
+            if (sizeValue == capacity) {
                 if (!resize(2 * capacity)) return false; // possible OOM
             }
-            data[size] = val;
-            size++;
+            data[sizeValue] = val;
+            sizeValue++;
             return true;
         }
         void clear() {
-            size = 0;
+            sizeValue = 0;
         }
         int pop_back() {
-            if (size == 0) return -1;
-            size--;
-            return data[size];
+            if (sizeValue == 0) return -1;
+            sizeValue--;
+            return data[sizeValue];
+        }
+        int operator[](size_t index) {
+            return data[index];
         }
     private:
         bool resize(size_t newsize) {
             if (newsize > capacity) {
                 int* temp = new int[newsize];
-                for (size_t ii = 0; ii < size; ii++) {
+                for (size_t ii = 0; ii < sizeValue; ii++) {
                     temp[ii] = data[ii];
                 }
                 delete[] data;
@@ -67,7 +71,7 @@ class Vector{
             }
         }
         size_t capacity;
-        size_t size;
+        size_t sizeValue;
         int* data;
 
 
@@ -81,6 +85,12 @@ int main() {
     Vector v2(10, 5);
     cout << v << endl;
     cout << v1 << endl;
+    cout << v2 << endl;
+    cout << v2.size() << endl;
+    cout << v2.push_back(10) << endl;
+    cout << v2.push_back(20) << endl;
+    cout << v2[0] << endl;
+    cout << v2[6] << endl;
     cout << v2 << endl;
     return 0;
 }
