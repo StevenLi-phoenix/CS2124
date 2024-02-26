@@ -117,12 +117,12 @@ int main() {
     cout << v << endl;
     cout << v1 << endl;
     cout << v2 << endl;
-    cout << v2.size() << endl;
-    cout << v2.push_back(10) << endl;
-    cout << v2.push_back(20) << endl;
-    cout << v2[0] << endl;
-    cout << v2[11] << endl;
-    cout << v2 << endl;
+    cout << v.size() << endl;
+    cout << v.push_back(10) << endl;
+    cout << v.push_back(20) << endl;
+    cout << v[0] << endl;
+    cout << v[-1] << endl;
+    cout << v << endl;
     return 0;
 }
 
