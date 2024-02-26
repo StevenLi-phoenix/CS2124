@@ -57,7 +57,7 @@ class Vector{
             if (index >= sizeValue) return -1;
             if (index > 0) return data[index];
             if (index > -sizeValue) return data[sizeValue + index];
-            if (index < -sizeValue) return -1;
+            return -1;
         }
     private:
         bool resize(size_t newsize) {
