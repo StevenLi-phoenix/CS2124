@@ -41,7 +41,7 @@ class Vector{
             size = 0;
         }
         int pop_back() {
-            if (size == 0) return;
+            if (size == 0) return -1;
             size--;
             return data[size];
         }
