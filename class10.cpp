@@ -37,8 +37,20 @@ class Vector{
         ~Vector() { delete[] data; }
         size_t size() const { return sizeValue; }
         bool push_back(int val) {
+            if (capacity == 0) {
+                if (!resize(1)) {
+                    cerr << "push_back: cannot resize" << endl;
+                    return false;
+                } // possible OOM
+                data = new int[1];
+                sizeValue++;
+                return true;
+            }
             if (sizeValue == capacity) {
-                if (!resize(2 * capacity)) return false; // possible OOM
+                if (!resize(2 * capacity)){
+                    cerr << "push_back: cannot resize" << endl;
+                    return false;
+                } // possible OOM
             }
             data[sizeValue] = val;
             sizeValue++;
@@ -48,8 +60,17 @@ class Vector{
             sizeValue = 0;
         }
         int pop_back() {
-            if (sizeValue == 0) return -1;
+            if (sizeValue == 0) {
+                cerr << "pop_back: empty vector" << endl;
+                return -1;
+            };
             sizeValue--;
+            if (sizeValue < capacity / 4) {
+                if (!resize(capacity / 2)) {
+                    cerr << "pop_back: cannot resize" << endl;
+                    return -1;
+                }
+            }
             return data[sizeValue];
         }
         int operator[](size_t index) {
@@ -70,6 +91,19 @@ class Vector{
                 data = temp;
                 capacity = newsize;
                 return true;
+            } else if (newsize < capacity) {
+                if (newsize > sizeValue) {
+                    int* temp = new int[newsize];
+                    for (size_t ii = 0; ii < newsize; ii++) {
+                        temp[ii] = data[ii];
+                    }
+                    delete[] data;
+                    data = temp;
+                    capacity = newsize;
+                    return true;
+                } else {
+                    return false; // cannot shrink to a smaller size
+                }
             } else {
                 return false;
             }
