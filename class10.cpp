@@ -66,7 +66,7 @@ class Vector{
             }
             return data[sizeValue];
         }
-        int operator[](size_t index) {
+        int operator[](int index) {
             // return *(data+index);
             if (index >= sizeValue) return -1;
             if (index >= 0) return data[index];
