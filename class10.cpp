@@ -90,7 +90,7 @@ int main() {
     cout << v2.push_back(10) << endl;
     cout << v2.push_back(20) << endl;
     cout << v2[0] << endl;
-    cout << v2[6] << endl;
+    cout << v2[11] << endl;
     cout << v2 << endl;
     return 0;
 }
