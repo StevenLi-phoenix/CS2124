@@ -22,7 +22,7 @@ class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v);
     public:
         Vector() : capacity(0), size(0), data(nullptr) {}
-        Vector(int s, int val = 0) : capacity(s), size(s) {
+        Vector(size_t s, int val = 0) : capacity(s), size(s) {
             data = new int[s];
             for (size_t ii = 0; ii < s; ii++) {
                 data[ii] = val;
