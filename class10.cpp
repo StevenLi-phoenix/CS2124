@@ -21,6 +21,7 @@ using namespace std;
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v);
     public:
+        Vector() : size(0), capacity(0), data(nullptr) {}
         Vector(int s, int val = 0) : size(s), capacity(s) {
             data = new int[s];
             for (size_t ii = 0; ii < s; ii++) {
@@ -69,11 +70,12 @@ class Vector{
 
 // main function
 int main() {
-    int* myarray[5];
-    myarray[0] = new int(5);
-    cout << *myarray[0] << endl;
-    cout << myarray[0] << endl;
-    cout << myarray << endl;
+    Vector v;
+    Vector v1(10);
+    Vector v2(10, 5);
+    cout << v << endl;
+    cout << v1 << endl;
+    cout << v2 << endl;
     return 0;
 }
 
