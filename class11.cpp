@@ -28,7 +28,7 @@ class Vector{
     };
 
     public:
-        Vector(int s) : elem(new double[s]), sz(s) {}
+        explicit Vector(int s) : elem(new double[s]), sz(s) {}
         Vector& operator=(const Vector& a){
             double* p = new double[a.sz];
             for(int i = 0; i < a.sz; i++){
