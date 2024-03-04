@@ -74,9 +74,7 @@ class Vector{
             sz++;
         }
         int pop_back(){
-            if (sz == 0){
-                return 0;
-            }
+            // we believe the user will not call pop_back on an empty vector
             return elem[--sz];
         }
     private:
