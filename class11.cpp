@@ -84,7 +84,7 @@ class Vector{
 int main() {
     Vector v1(0);
     cout << v1 << endl;
-    v1 = 3;
+    v1.push_back(1);
     cout << v1 << endl;
     v1.push_back(5);
     cout << v1 << endl;
