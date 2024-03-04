@@ -72,7 +72,7 @@ class Vector{
             if (sz == 0){
                 return 0;
             }
-            return elem[sz--];
+            return elem[--sz];
         }
     private:
         int* elem;
