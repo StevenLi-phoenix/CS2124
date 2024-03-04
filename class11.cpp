@@ -55,6 +55,7 @@ class Vector{
                     elem[0] = d;
                     sz++;
                     cap++;
+                    return;
                 }
                 double* p = new double[cap*2];
                 for(size_t i = 0; i < sz; i++){
