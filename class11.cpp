@@ -89,7 +89,8 @@ int main() {
     v1.push_back(5);
     cout << v1 << endl;
 
-    Vector v2(v1);
+    Vector v2;
+    v2 = v1;
     cout << v2 << endl;
     v2.push_back(10);
     cout << v2 << endl;
