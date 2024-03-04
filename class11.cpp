@@ -21,35 +21,56 @@ using namespace std;
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v){
         os << "Vector(" << v.size() << ")\n";
-        for(int i = 0; i < v.size(); i++){
+        for(size_t i = 0; i < v.size(); i++){
             os << v.elem[i] << " ";
         }
         return os;
     };
 
     public:
-        explicit Vector(int s) : elem(new double[s]), sz(s) {}
+        Vector() : elem(nullptr), sz(0), cap(0) {}
+        explicit Vector(size_t s) : elem(new double[s]), sz(s), cap(s) {
+            for(size_t i = 0; i < s; i++){
+                elem[i] = 0;
+            }
+        }
         Vector& operator=(const Vector& a){
-            double* p = new double[a.sz];
-            for(int i = 0; i < a.sz; i++){
+            double* p = new double[a.cap];
+            for(size_t i = 0; i < a.sz; i++){
                 p[i] = a.elem[i];
             }
             delete[] elem;
             elem = p;
+            cap = a.cap;
             sz = a.sz;
             return *this;
         };
-        // Vector& operator=(int i){
-        //     for(int j = 0; j < sz; j++){
-        //         elem[j] = i;
-        //     }
-        //     return *this;
-        // };
-        double& operator[](int i) { return elem[i]; }
-        int size() const { return sz; }
+        double& operator[](size_t i) { return elem[i]; }
+        size_t size() const { return sz; }
+
+        void push_back(double d){
+            if (sz == cap){
+                if (cap == 0){
+                    elem = new double[1];
+                    elem[0] = d;
+                    sz++;
+                    cap++;
+                    return true;
+                }
+                double* p = new double[cap*2];
+                for(size_t i = 0; i < sz; i++){
+                    p[i] = elem[i];
+                }
+                delete[] elem;
+                elem = p;
+                cap *= 2;
+            }
+            elem[sz] = d;
+            sz++;
+        }
     private:
         double* elem;
-        int sz;
+        size_t sz, cap;
 };
 // function prototypes
 
