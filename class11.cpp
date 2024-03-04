@@ -21,6 +21,10 @@ using namespace std;
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v){
         os << "Vector(" << v.size() << "): [";
+        if (v.size() == 0){
+            os << "]";
+            return os;
+        }
         for(size_t i = 0; i < v.size() - 1; i++){
             os << v.elem[i] << ",";
         }
