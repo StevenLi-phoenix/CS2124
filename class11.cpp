@@ -70,7 +70,7 @@ class Vector{
         }
         int pop_back(){
             if (sz == 0){
-                return;
+                return 0;
             }
             return elem[sz--];
         }
