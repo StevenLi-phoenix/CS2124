@@ -50,6 +50,7 @@ class Vector{
             sz = a.sz;
             return *this;
         };
+        ~Vector() { delete[] elem; }
         int& operator[](size_t i) { return elem[i]; }
         size_t size() const { return sz; }
 
