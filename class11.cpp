@@ -29,7 +29,16 @@ class Vector{
 
     public:
         Vector(int s) : elem(new double[s]), sz(s) {}
-        Vector& operator=(const Vector& a);
+        Vector& operator=(const Vector& a){
+            double* p = new double[a.sz];
+            for(int i = 0; i < a.sz; i++){
+                p[i] = a.elem[i];
+            }
+            delete[] elem;
+            elem = p;
+            sz = a.sz;
+            return *this;
+        };
         // Vector& operator=(int i){
         //     for(int j = 0; j < sz; j++){
         //         elem[j] = i;
