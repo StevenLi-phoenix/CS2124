@@ -82,7 +82,7 @@ class Vector{
 
 // main function
 int main() {
-    Vector v1(5);
+    Vector v1(0);
     cout << v1 << endl;
     v1 = 3;
     cout << v1 << endl;
