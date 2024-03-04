@@ -29,7 +29,7 @@ class Vector{
 
     public:
         Vector() : elem(nullptr), sz(0), cap(0) {}
-        explicit Vector(size_t s) : elem(new double[s]), sz(s), cap(s) {
+        Vector(size_t s) : elem(new double[s]), sz(s), cap(s) {
             for(size_t i = 0; i < s; i++){
                 elem[i] = 0;
             }
