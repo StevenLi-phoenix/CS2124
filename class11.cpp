@@ -56,6 +56,7 @@ class Vector{
 // main function
 int main() {
     Vector v1(5);
+    cout << v1 << endl;
     v1 = 3;
     cout << v1 << endl;
     return 0;
