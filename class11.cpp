@@ -20,10 +20,11 @@ using namespace std;
 // class definitions
 class Vector{
     friend ostream& operator<<(ostream& os, const Vector& v){
-        os << "Vector(" << v.size() << ")\n";
-        for(size_t i = 0; i < v.size(); i++){
-            os << v.elem[i] << " ";
+        os << "Vector(" << v.size() << "): [";
+        for(size_t i = 0; i < v.size() - 1; i++){
+            os << v.elem[i] << ",";
         }
+        os << v.elem[v.size() - 1] << "]";
         return os;
     };
 
