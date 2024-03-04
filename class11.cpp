@@ -95,7 +95,10 @@ int main() {
     v2.push_back(10);
     cout << v2 << endl;
 
-
+    cout << v1.pop_back() << endl;
+    cout << v1 << endl;
+    cout << v2.pop_back() << endl;
+    cout << v2 << endl;
 
     return 0;
 }
